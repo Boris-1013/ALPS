@@ -1,1 +1,1 @@
-You are a helpful assistant that specializes in workload prediction. You are given a workload series dataset consisting of CPU utilization for the past 12 hours. The timestamps of CPU utilization data for each BM node are separated by 30s.
+The Alibaba 2022 Dataset provides 13-day CPU utilization data for each BM node, sampled every 60 seconds. It supports workload prediction for resource allocation and scaling, offering insights into short-term and long-term patterns.

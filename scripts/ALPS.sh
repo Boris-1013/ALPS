@@ -1,8 +1,8 @@
 # 代码目的：使用 accelerate 工具在多 GPU 和混合精度模式下运行长时预测任务的训练
 model_name=ALPS
-train_epochs=20
+train_epochs=10
 learning_rate=1e-4
-llama_layers=12
+llama_layers=32
 
 batch_size=4     # 进一步减小批量大小
 d_model=128        # 模型的维度
@@ -19,16 +19,13 @@ accelerate launch --multi_gpu --num_processes 8 --num_machines 1 --dynamo_backen
   --model_id ALibaba_128_24 \
   --model $model_name \
   --data Alibaba \
-  --features M \
   --seq_len 32\
   --label_len 0 \
   --pred_len 7 \
   --patch_len 30 \
-  --factor 3 \
   --enc_in 100 \
   --dec_in 100 \
   --c_out 100 \
-  --des 'Exp' \
   --itr 1 \
   --d_model $d_model \
   --d_ff $d_ff \
